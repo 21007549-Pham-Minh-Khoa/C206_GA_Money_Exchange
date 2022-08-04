@@ -4,8 +4,8 @@ public class Appointment extends customer{
 	private String date;
 	private String time;
 	
-	public Appointment(String name, String password, String email, String username, String date, String time) {
-		super(name, password, email, username);
+	public Appointment(String name, String email, String username, String date, String time) {
+		super(name, email, username);
 		this.date = date;
 		this.time = time;
 	}

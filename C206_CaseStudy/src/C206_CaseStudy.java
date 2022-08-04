@@ -33,7 +33,7 @@ public class C206_CaseStudy {
 			return ap;
 			
 		}
-		public static void addCamcorder(ArrayList<Appointment> appointmentList, Appointment ap) {
+		public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment ap) {
 			
 			appointmentList.add(ap);
 			

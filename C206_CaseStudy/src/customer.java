@@ -14,6 +14,10 @@ public class customer extends person{
 		super(name, password, email);		
 		this.username = username;
 	}
+	public customer(String name, String email, String username) {
+		super(name,email);		
+		this.username = username;
+	}
 
 	public String getUsername() {
 		return username;
