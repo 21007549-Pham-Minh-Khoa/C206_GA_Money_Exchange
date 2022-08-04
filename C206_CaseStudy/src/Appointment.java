@@ -1,14 +1,16 @@
 
-public class Appointment {
+public class Appointment extends customer{
 	
 	private String date;
 	private String time;
 	
-	public Appointment(String date, String time) {
+	public Appointment(String name, String password, String email, String username, String date, String time) {
+		super(name, password, email, username);
 		this.date = date;
 		this.time = time;
 	}
 
+	
 	public String getDate() {
 		return date;
 	}
