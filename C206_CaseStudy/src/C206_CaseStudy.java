@@ -14,7 +14,7 @@ public class C206_CaseStudy {
 
 		for (int i = 0; i < appointmentList.size(); i++) {
 
-			output += String.format("%-20s %-20s\n", appointmentList.get(i).getDate(),appointmentList.get(i).getTime()) 
+			output += String.format("%-20s %-20s\n", appointmentList.get(i).getDate(),appointmentList.get(i).getTime()); 
 		}
 		return output;
 	}
