@@ -130,5 +130,62 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that ViewEmployee run",testOutput,emp);
 		
 	}
+	
+	@Test
+	public void testDeleteCustomer() {
+		assertNotNull("Test if there is a valid Customer ArrayList", customerList);
+		
+		C206_CaseStudy.AddCustomer(customerList, cust1);
+		C206_CaseStudy.AddCustomer(customerList, cust2);
+		C206_CaseStudy.AddCustomer(customerList, cust3);
+		assertEquals("Test that customerList have 3 customer", 3, customerList.size());
+		
+		String srchUsername = "Sammy123";
+		String testOutput = "User not found";
+		String msg = C206_CaseStudy.DeleteCustomer(customerList, srchUsername);
+		assertEquals("Test that customerList have 3 customer",3,customerList.size());
+		assertSame("Test that the first customer in the list is cust1", cust1, customerList.get(0));
+		assertSame("Test that the second customer in the list is cust2", cust2, customerList.get(1));
+		assertSame("Test that the second customer in the list is cust3", cust3, customerList.get(2));
+		assertEquals("Test the message", testOutput, msg);
+		
+		srchUsername = cust1.getUsername();
+		testOutput = "Remove user "+cust1.getUsername();
+		msg = C206_CaseStudy.DeleteCustomer(customerList, srchUsername);
+		assertEquals("Test that customerList have 2 customer",2,customerList.size());
+		assertSame("Test that the first customer in the list is cust2", cust2, customerList.get(0));
+		assertSame("Test that the second customer in the list is cust3", cust3, customerList.get(1));
+		assertEquals("Test the message", testOutput, msg);
+		
+	}
+	
+	@Test
+	public void testDeleteEmployee() {
+		assertNotNull("Test if there is a valid Employee ArrayList", employeeList);
+		
+		C206_CaseStudy.AddEmployee(employeeList, emp1);
+		C206_CaseStudy.AddEmployee(employeeList, emp2);
+		C206_CaseStudy.AddEmployee(employeeList, emp3);
+		assertEquals("Test that employeeList have 3 customer", 3, employeeList.size());
+		
+		String srchUserID = "S123A";
+		String testOutput = "Employee not found";
+		String msg = C206_CaseStudy.DeleteEmployee(employeeList, srchUserID);
+		assertEquals("Test that employeeList have 3 employee",3,employeeList.size());
+		assertSame("Test that the first employee in the list is emp1", emp1, employeeList.get(0));
+		assertSame("Test that the second employee in the list is emp2", emp2, employeeList.get(1));
+		assertSame("Test that the second employee in the list is emp3", emp3, employeeList.get(2));
+		assertEquals("Test the message", testOutput, msg);
+		
+		srchUserID = emp1.getEmployeeID();
+		testOutput = "Remove user "+emp1.getName();
+		msg = C206_CaseStudy.DeleteEmployee(employeeList, srchUserID);
+		assertEquals("Test that employeeList have 2 employee", 2, employeeList.size());
+		assertSame("Test that the first employee in the list is emp2", emp2, employeeList.get(0));
+		assertSame("Test that the second employee in the list is emp3", emp3, employeeList.get(1));
+		assertEquals("Test the message", testOutput, msg);
+		
+	}
+	
 
 }

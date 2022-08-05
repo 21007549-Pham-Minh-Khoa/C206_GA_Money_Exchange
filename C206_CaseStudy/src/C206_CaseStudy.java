@@ -20,38 +20,39 @@ public class C206_CaseStudy {
 	ArrayList<Appointment> appointmentList= new ArrayList<Appointment>();
 	}
 	
-		public static String retrieveAllAppointment(ArrayList<Appointment> appointmentList) {
-		String output = "";
+		
 	public static String retrieveAllAppointment(ArrayList<Appointment> appointmentList) {
 		String output = "";
 
 		for (int i = 0; i < appointmentList.size(); i++) {
 
-			output += String.format("%-20s %-20s\n", appointmentList.get(i).getDate(),appointmentList.get(i).getTime()) 
+			output += String.format("%-20s %-20s\n", appointmentList.get(i).getDate(),
+					appointmentList.get(i).getTime());
 		}
 		return output;
 	}
+
 	public static void viewAllCamcorder(ArrayList<Appointment> appointmentList) {
 		String output = String.format("%-20s %-20s\n", "DATE", "TIME");
-		 output += retrieveAllAppointment(appointmentList);	
+		output += retrieveAllAppointment(appointmentList);
 		System.out.println(output);
 	}
-	
-	
-		public static Appointment inputAppointment() {
-			String date = Helper.readString("Enter date > ");
-			String time= Helper.readString("Enter time > ");
-			String username = Helper.red
 
-			Appointment ap = new Appointment(name,email,date, time);
-			return ap;
-			
-		}
-		public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment ap) {
-			
-			appointmentList.add(ap);
-			
-		}
+//	public static Appointment inputAppointment() {
+//			String date = Helper.readString("Enter date > ");
+//			String time= Helper.readString("Enter time > ");
+//			String username = Helper.red
+//
+//			Appointment ap = new Appointment(name,email,date, time);
+//			return ap;
+//			
+//		}
+
+	public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment ap) {
+
+		appointmentList.add(ap);
+
+	}
 	
 	public static employee inputEmployee() {
 		employee emp = null;
@@ -147,14 +148,38 @@ public class C206_CaseStudy {
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		public static void DeleteCustomer(ArrayList<customer> customerList,customer cust) {
+		public static String DeleteCustomer(ArrayList<customer> customerList,String username) {
+			String output = "User not found";
+			boolean isFound = findCustomer(customerList,username);
 			
+			if(isFound == true) {
+				for(customer i : customerList) {
+					if(username.equals(i.getUsername())) {
+						customerList.remove(i);
+						output = "Remove user "+i.getUsername();
+						break;
+					} 
+				}
+			}
+			return output;
 		}
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		public static void DeleteEmployee(ArrayList<employee> employeeList, employee emp) {
+		public static String DeleteEmployee(ArrayList<employee> employeeList, String srchUserID) {
+			String output = "Employee not found";
+			boolean isFound = findEmployee(employeeList,srchUserID);
 			
+			if(isFound == true) {
+				for(employee i : employeeList) {
+					if(srchUserID.equals(i.getEmployeeID())) {
+						employeeList.remove(i);
+						output = "Remove user "+i.getName();
+						break;
+					} 
+				}
+			}
+			return output;
 		}
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
