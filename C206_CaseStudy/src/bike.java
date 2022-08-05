@@ -1,23 +1,23 @@
 
-public class BikeList {
+public class bike {
 	
-	private String id;
+	private int id;
 	private String name;
 	private String description;
-	private double price;
+	private int price;
 	
-	public BikeList(String id, String name, String desscription, double price) {
+	public bike(int id, String name, String description, int price) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
 	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 	
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
@@ -29,7 +29,7 @@ public class BikeList {
 		this.name = name;
 	}
 	
-	public String description() {
+	public String getDescription() {
 		return description;
 	}
 	
@@ -39,7 +39,7 @@ public class BikeList {
 	}
 	
 	public int getPrice() {
-		return (int) price;
+		return price;
 	}
 	
 	public void setPrice(int price) {
