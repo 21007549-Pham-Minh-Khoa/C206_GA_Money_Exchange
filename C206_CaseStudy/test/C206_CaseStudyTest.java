@@ -187,5 +187,14 @@ public class C206_CaseStudyTest {
 		
 	}
 	
+	@Test
+	public void testLoginCustomer() {
+		String loginName = "";
+		String password = "";
+		boolean online = C206_CaseStudy.LoginCustomer(customerList, loginName, password);
+		assertFalse("Test the default online status is false",online);
+		
+		
+	}
 
 }

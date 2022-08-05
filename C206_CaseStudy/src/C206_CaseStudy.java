@@ -17,41 +17,7 @@ public class C206_CaseStudy {
 		ArrayList <employee> employeeList = new ArrayList<employee>();
 		ArrayList <customer> customerList = new ArrayList<customer>();
 		
-	ArrayList<Appointment> appointmentList= new ArrayList<Appointment>();
-	}
 	
-		
-	public static String retrieveAllAppointment(ArrayList<Appointment> appointmentList) {
-		String output = "";
-
-		for (int i = 0; i < appointmentList.size(); i++) {
-
-			output += String.format("%-20s %-20s\n", appointmentList.get(i).getDate(),
-					appointmentList.get(i).getTime());
-		}
-		return output;
-	}
-
-	public static void viewAllCamcorder(ArrayList<Appointment> appointmentList) {
-		String output = String.format("%-20s %-20s\n", "DATE", "TIME");
-		output += retrieveAllAppointment(appointmentList);
-		System.out.println(output);
-	}
-
-//	public static Appointment inputAppointment() {
-//			String date = Helper.readString("Enter date > ");
-//			String time= Helper.readString("Enter time > ");
-//			String username = Helper.red
-//
-//			Appointment ap = new Appointment(name,email,date, time);
-//			return ap;
-//			
-//		}
-
-	public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment ap) {
-
-		appointmentList.add(ap);
-
 	}
 	
 	public static employee inputEmployee() {
@@ -184,8 +150,9 @@ public class C206_CaseStudy {
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		public static void LoginCustomer(ArrayList<customer> customerList, String username, String email, String password) {
-			
+		public static boolean LoginCustomer(ArrayList<customer> customerList, String username_email, String password) {
+			boolean online = false;
+			return online;
 		}
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
