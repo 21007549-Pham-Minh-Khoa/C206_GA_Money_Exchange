@@ -24,7 +24,6 @@ public class C206_CaseStudyTest {
 
 	@Test
 	public void main() {
-		
 	}
 	
 
